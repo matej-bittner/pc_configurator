@@ -2,32 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #DFB3F2 inset !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+#component {@apply flex flex-col w-full gap-[12px]}
+#component h2{@apply font-medium text-lg text-center}
+#component #choose{@apply grid grid-cols-3 justify-items-center gap-y-[12px]}
+#component #choose p{@apply text-white text-base w-[160px] h-[30px] rounded-md  flex items-center justify-center cursor-pointer}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+#purchase-form .text-div {@apply flex flex-col}
+#purchase-form p {@apply pl-[9px] pb-[7px]}
+#purchase-form input {@apply w-full rounded-md bg-purple-light h-[33px] outline-none pl-4 text-sm}
+#purchase-form textarea {@apply w-full rounded-md bg-purple-light h-[70px] resize-none outline-none pl-4 py-1}
+#purchase-form .purchase-button {@apply w-[90px] rounded-md  h-[33px] resize-none flex items-center justify-center}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+#checkout-chosen-components .main-div{@apply  flex gap-[38px] w-full}
+#checkout-chosen-components .main-div .component-name {@apply w-[160px]  flex items-center justify-center text-white bg-purple-dark rounded-md h-[30px]}
+
+#checkout-prebuild-components .main-div{@apply  flex gap-[38px] w-full}
+#checkout-prebuild-components .main-div .component-name {@apply w-[160px]  flex items-center justify-start  }
